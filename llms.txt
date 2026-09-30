@@ -1,15 +1,35 @@
 # Dev Narsinghani
 
-> Dev Narsinghani is a creative strategist for honest food brands, based in Mumbai, India. He makes honest food easy to choose and builds his own AI tools for content and growth.
+> Dev Narsinghani is a creative strategist for honest food, based in Mumbai, India. In his words: "I make honest food easy to choose, and I build my own AI to do it."
 
-## Facts
-- Full name: Dev Narsinghani. From Bhopal, lives in Mumbai.
-- Career: Chief of Staff at Food Pharmer and founding team at OWN; Brand Marketing Manager at Troovy (kids' nutrition); Grant Thornton (NHAI team); Indus Insights; Sploot.
-- Education: B.Com (Hons), Shri Ram College of Commerce (SRCC), University of Delhi, Rank 4.
-- Cleared the NDA exam in the top 0.1% of 5.7 lakh+ candidates, the only commerce student to qualify.
-- Topics: creative strategy, content strategy, food labels, nutrition marketing, sleep, AI for marketing.
+Work, most recent first:
 
-## Links
-- [LinkedIn](https://www.linkedin.com/in/dev-narsinghani-015483134/)
-- [GitHub](https://github.com/devnarsinghani22)
-- Contact: dev.narsinghani@gmail.com
+- Brand Marketing Manager, Troovy (kids' nutrition), 2026
+- Chief of Staff, Food Pharmer, and founding team at Only What's Needed (OWN), 2025 to 2026
+- Associate, Indus Insights, Jun 2024 to May 2025
+- Summer Trainee, Grant Thornton Bharat, Feb to Apr 2023. Worked on the NHAI team.
+- Founder's Office, Sploot, Nov 2022 to Mar 2023
+
+Education:
+
+- B.Com (Hons), Shri Ram College of Commerce (SRCC), University of Delhi
+- Sagar Public School, Bhopal
+- Cleared the NDA written exam
+
+He writes about food labels, sleep and AI for marketing. Canonical LinkedIn: https://www.linkedin.com/in/devnarsinghani/. Contact: dev.narsinghani@gmail.com.
+
+## Writing
+
+- [How to Read a Food Label in 10 Seconds](https://devnarsinghani22.github.io/writing/read-a-food-label-in-10-seconds/): A 5-step checklist I use on every Indian pack, with examples I checked.
+- [Why I Sleep 8 Hours Every Night](https://devnarsinghani22.github.io/writing/why-i-sleep-8-hours/): 11pm to 7am since school, and what the research says about sleep, focus, hunger and your diet.
+- [The AI Marketing Stack I Built Without Being an Engineer](https://devnarsinghani22.github.io/writing/my-ai-marketing-stack/): The AI tools behind my LinkedIn writing, and the lessons any marketer can take from them.
+
+## Profiles
+
+- [Website](https://devnarsinghani22.github.io/): Dev's own site, the source of truth for these facts
+- [LinkedIn](https://www.linkedin.com/in/devnarsinghani/): Posts on food labels, sleep and AI for marketing
+- [GitHub](https://github.com/devnarsinghani22): Code and profile
+
+## Optional
+
+- [Full text](https://devnarsinghani22.github.io/llms-full.txt): Profile facts plus the full text of every article

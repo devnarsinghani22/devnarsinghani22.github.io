@@ -1,0 +1,428 @@
+# Dev Narsinghani
+
+> Dev Narsinghani is a creative strategist for honest food, based in Mumbai, India. In his words: "I make honest food easy to choose, and I build my own AI to do it."
+
+Work, most recent first:
+
+- Brand Marketing Manager, Troovy (kids' nutrition), 2026
+- Chief of Staff, Food Pharmer, and founding team at Only What's Needed (OWN), 2025 to 2026
+- Associate, Indus Insights, Jun 2024 to May 2025
+- Summer Trainee, Grant Thornton Bharat, Feb to Apr 2023. Worked on the NHAI team.
+- Founder's Office, Sploot, Nov 2022 to Mar 2023
+
+Education:
+
+- B.Com (Hons), Shri Ram College of Commerce (SRCC), University of Delhi
+- Sagar Public School, Bhopal
+- Cleared the NDA written exam
+
+He writes about food labels, sleep and AI for marketing. Canonical LinkedIn: https://www.linkedin.com/in/devnarsinghani/.
+
+---
+
+# How to Read a Food Label in 10 Seconds
+
+*A 5-step checklist I use on every Indian pack, with examples I checked.*
+
+By Dev Narsinghani. He writes about food labels, sleep and AI for marketing. Published 30 September 2026. https://devnarsinghani22.github.io/writing/read-a-food-label-in-10-seconds/
+
+I was Chief of Staff at Food Pharmer and on the founding team at Only What's Needed. Reading the back of food packs was a big part of that work.
+
+This is the fast version I use in a shop, basket in hand.
+
+You can skip the nutrition course. It takes 5 checks, and each one takes about 2 seconds.
+
+Here is the exact order I use.
+
+## Step 1, skip the front (0 seconds)
+
+The front is marketing. It's where the brand picks the words, the photos and the claims.
+
+The back is different. The law decides what goes there, and the brand can't skip it.
+
+So I turn it over before I read a single word up there. Words like natural, wholesome and multigrain tell me nothing about what's inside.
+
+Train your hand to flip first, because everything below happens on the back.
+
+## Step 2, read the top 3 ingredients (2 seconds)
+
+In India, the ingredient list must run from most to least by weight. That's an FSSAI rule, and it's the most useful rule on the pack.
+
+It means the first 3 names are most of what you're eating.
+
+Take a mixed fruit jam. The one I checked puts sugar 1st and the fruit 2nd.
+
+The front of the jar shows fruit. The back puts sugar ahead of the fruit.
+
+The masala instant noodle pack I checked lists maida first and palm oil next.
+
+Nothing wrong with eating that now and then. Just know the block is mostly refined flour.
+
+My rule is simple. If sugar, maida or oil sits in the top 3, it's a treat for me.
+
+## Step 3, count every name for sugar (2 seconds)
+
+Here's the trick that fools smart people. A brand can split sugar across several names.
+
+Each name then sits lower on the list, so each one looks small.
+
+Names I watch for on Indian packs:
+
+- sugar
+- invert sugar syrup or invert syrup
+- liquid glucose or glucose syrup
+- dextrose
+- fructose
+- honey
+- jaggery
+- fruit juice concentrate
+
+The WHO counts honey, syrups and juice concentrates as free sugars, the kind to limit. So I count them too.
+
+Honey cornflakes are a good example. The pack I checked lists sugar, dextrose and honey.
+
+That's 3 sweeteners in one bowl.
+
+The glucose biscuit I checked does the same, with sugar, invert syrup and liquid glucose.
+
+If I count 2 or more sugar names, I stop reading and put it back.
+
+## Step 4, read sugar per 100g (2 seconds)
+
+Every pack must show its numbers per 100g, or per 100ml on a drink. Brands also show a per serving column, and they pick the serving size.
+
+A tiny serving makes every number look small. Per 100g is the same for every pack, so it's the only column I read.
+
+2 lines help me judge the sugar number fast:
+
+- 5g or less per 100g is low. That's FSSAI's legal line for a low sugar claim, about a teaspoon.
+- More than 22.5g per 100g is high. That's the UK's red-light line, close to a quarter of the pack.
+
+Now the real labels:
+
+- The mixed fruit jam I checked: about 68g sugar per 100g, so two-thirds of the jar is sugar.
+- The honey cornflakes I checked: 25g per 100g, so a quarter of every bowl is sugar.
+- The glucose biscuit I checked: about 28g per 100g, so more than a quarter of every biscuit is sugar.
+
+For drinks, FSSAI's low sugar line is 2.5g per 100ml. That's about half a teaspoon in every 100ml.
+
+## Step 5, turn sodium into salt (2 seconds)
+
+This is the check almost nobody does, and it's the one I use most.
+
+Indian labels list sodium, sometimes in mg and sometimes in g. 970mg is 0.97g, just under 1g. The daily limit is for salt, and salt is roughly 2.5 times the sodium.
+
+So the quick sum is sodium x 2.5 = salt.
+
+The WHO says adults should eat less than 5g of salt a day. That's just under a teaspoon.
+
+Back to the masala instant noodles:
+
+- The pack I checked shows 0.97g sodium per 100g.
+- The block I checked is 70g, so it carries about 0.68g of sodium.
+- Times 2.5, that's about 1.7g of salt.
+
+One block of noodles is about a third of your whole day's salt. That's before the dal, the pickle or the namkeen.
+
+2 lines help here too.
+
+- 0.12g sodium or less per 100g is low. That's FSSAI's legal line for a low sodium claim.
+- More than 0.6g sodium per 100g is high. That's the UK red-light line, 1.5g of salt or about a quarter teaspoon.
+
+Salty food rarely tastes salty enough to warn you. The label does it for you, if you do the sum.
+
+## What a good label looks like
+
+This isn't about fear. Plenty of packs pass.
+
+The peanut butter I buy lists one thing, roasted peanuts. The Greek yogurt I buy lists just milk, milk solids and cultures.
+
+A short list with real food at the top is the best sign on a pack.
+
+## The 10-second checklist
+
+Save this for your next grocery run:
+
+- Turn it over and skip the front
+- Read the top 3 ingredients
+- Count the sugar names (2 or more is a warning)
+- Sugar per 100g: 5g (about a spoon) is low, over 22.5g is high
+- Sodium x 2.5 = salt, and over 0.6g sodium per 100g is high
+
+Do it on 5 packs in your own kitchen tonight. I bet one of them surprises you.
+
+Which one did it for you, the sugar or the salt?
+
+## Sources
+
+Every number above comes from one of these.
+
+- FSSAI, Food Safety and Standards (Labelling and Display) Regulations, 2020, Reg 5(2)(b) (ingredients in descending order by weight) and Reg 5(3) (nutrition information per 100g or 100ml, including total and added sugars)
+- FSSAI, Food Safety and Standards (Advertising and Claims) Regulations, 2018, Schedule I (low sugar: not more than 5g per 100g or 2.5g per 100ml; sugar free: not more than 0.5g; low sodium: not more than 0.12g per 100g)
+- WHO, Guideline: Sugars intake for adults and children, 2015 (free sugars include honey, syrups and fruit juice concentrates)
+- WHO, Sodium reduction fact sheet (adults: less than 5g salt a day, about 2g sodium; salt is about 2.5 times sodium)
+- UK Department of Health and Food Standards Agency, Guide to creating a front of pack nutrition label for pre-packed products, 2016 (high: sugar over 22.5g per 100g, salt over 1.5g per 100g)
+- Open Food Facts label transcriptions of 4 packs sold in India, one per category, read 28 September 2026: a mixed fruit jam (sugars 68.1g per 100g), honey cornflakes (sugars 25g per 100g), a glucose biscuit (sugars 27.7g per 100g) and masala instant noodles (sodium 0.97g per 100g, 70g block)
+- Peanut butter and Greek yogurt lists: pack labels as shown on Zepto product pages, read 8 September 2026
+
+---
+
+# Why I Sleep 8 Hours Every Night
+
+*11pm to 7am since school, and what the research says about sleep, focus, hunger and your diet.*
+
+By Dev Narsinghani. He writes about food labels, sleep and AI for marketing. Published 30 September 2026. https://devnarsinghani22.github.io/writing/why-i-sleep-8-hours/
+
+I was Chief of Staff at Food Pharmer and on the founding team at Only What's Needed. My work has been about what goes on our plates.
+
+The habit I protect hardest has nothing to do with food. I sleep from 11pm to 7am, a full 8 hours, and I've done it since school.
+
+Around me, 5 or 6 hours is normal. People say it with a kind of pride, like it proves how hard they work.
+
+Those 8 hours are the smartest thing I do for my work and body.
+
+Here's why, and here's what the research actually says.
+
+## How much sleep an adult needs
+
+The American Academy of Sleep Medicine and the Sleep Research Society looked at the evidence together. Their joint advice is plain.
+
+Adults should sleep 7 hours or more a night, on a regular basis.
+
+Their report links regularly sleeping less to weight gain, diabetes and high blood pressure. Heart disease, depression, mistakes and accidents are on that list too.
+
+7 hours is the floor in that advice. I aim for 8 because I want room for a bad night.
+
+## Short sleep makes you worse at your job, and you can't feel it
+
+This is the study that changed how I think about sleep.
+
+In 2003, a lab kept healthy adults on a fixed amount of sleep for 2 weeks. One group got 6 hours in bed a night.
+
+By the end, that group did as badly on tests as people kept awake for a full night. Their attention and working memory slipped almost every day.
+
+Their own sleepiness ratings barely rose after the first few days.
+
+They felt only a little tired, while their scores kept falling.
+
+A group on 4 hours did worse still, matching 2 full nights awake.
+
+So when someone tells me they're fine on 5 hours, I believe they feel fine. The research says feeling fine is a poor guide.
+
+## Short sleep makes you hungrier
+
+In a 2004 study, young men slept only 4 hours a night for 2 nights. The same men also had 2 nights of 10 hours, for comparison.
+
+After the short nights, their hunger went up by 24%, almost a quarter. The hormone that signals fullness dropped, and the one that drives hunger rose.
+
+Their cravings rose most for sweet, salty and starchy food.
+
+I've read food labels for work, so this one matters to me. When you are tired, you reach for exactly the packs I warn people about.
+
+## Short sleep may change what a diet takes off your body
+
+This study looked at what happens to a diet when sleep is cut short.
+
+In 2010, 10 overweight adults ate a reduced diet for 2 weeks, twice. One round they had 8.5 hours in bed each night, and one round 5.5 hours.
+
+They lost about the same weight both times, but what they lost was very different.
+
+- On short sleep, the fat they lost fell by 55%, so less than half as much.
+- The loss of lean tissue, like muscle, went up by 60%.
+
+Both rounds had the same diet and showed the same drop on the scale. The difference was in what that weight was made of.
+
+It's a small study, and it only ran 2 weeks. Treat it as a signal, not proof.
+
+## Keeping the same hours may matter as much as the total
+
+A 2024 study tracked sleep for about 60,000 people in the UK with wrist devices.
+
+In that study, more regular sleep was linked to a lower risk of dying over the follow-up. Keeping the same hours predicted that risk better than total hours did.
+
+The authors suggest a simple target: fall asleep and wake up within about a 1-hour window every day.
+
+This is the part of my habit I'd defend most. 11 to 7 is the same on a Monday and a Saturday, give or take.
+
+## Some people really can live on less
+
+I want to be fair here. A few people carry rare gene changes that let them do fine on about 6 hours.
+
+The first one was found in 2009, in a single family. It's rare, and most of what we know comes from a handful of families.
+
+If you need 2 coffees to get going, you're probably not one of them.
+
+## What I actually do
+
+3 habits keep my 11 to 7 steady:
+
+- The same bedtime and wake time, weekends included
+- Daylight on my face soon after I wake
+- A dark bedroom, with the curtains fully shut
+
+The research backs all 3.
+
+- The 2024 study's authors suggest keeping sleep and wake times inside about a 1-hour window.
+- Light is the body clock's main signal, and experts say daylight is the best daytime source.
+- The same experts say the bedroom should be as dark as possible while you sleep.
+
+One more habit is worth trying, and it's about the lit screen before bed.
+
+In one study, a lit tablet before bed delayed the sleep hormone by over 1.5 hours. That study compared a lit tablet with a printed book, in the same dim room. Tablet readers took longer to fall asleep and felt less alert the next morning.
+
+## One more rule worth stealing
+
+Watch the time of your last coffee.
+
+In a 2013 study, people took a big dose of caffeine 6 hours before bed. The dose was about 2 or 3 regular coffees.
+
+It still cut their sleep by more than 1 hour on a home sleep monitor.
+
+For an 11pm bedtime, 6 hours back is 5pm. That's the latest coffee this study supports.
+
+## Why this belongs next to food
+
+Most of my work has been about labels, sugar and salt. Sleep turned out to matter just as much, and it has no label at all.
+
+It costs nothing and it's boring to talk about. Research links it to your hunger, your focus and what a diet takes off your body.
+
+If you try one thing, fix your wake-up time for 2 weeks. Keep it inside a 1-hour window, weekends too.
+
+Are you a 5-hour sleeper or an 8-hour sleeper right now?
+
+## Sources
+
+Every number above comes from one of these.
+
+- Watson NF et al, Recommended amount of sleep for a healthy adult, joint consensus statement of the American Academy of Sleep Medicine and Sleep Research Society, Sleep 2015, 38(6), 843-844, doi 10.5665/sleep.4716
+- Van Dongen HPA, Maislin G, Mullington JM, Dinges DF, The cumulative cost of additional wakefulness, Sleep 2003, 26(2), 117-126, doi 10.1093/sleep/26.2.117
+- Spiegel K, Tasali E, Penev P, Van Cauter E, Sleep curtailment in healthy young men is associated with decreased leptin levels, elevated ghrelin levels, and increased hunger and appetite, Annals of Internal Medicine 2004, 141(11), 846-850, doi 10.7326/0003-4819-141-11-200412070-00008
+- Nedeltcheva AV, Kilkus JM, Imperial J, Schoeller DA, Penev PD, Insufficient sleep undermines dietary efforts to reduce adiposity, Annals of Internal Medicine 2010, 153(7), 435-441, doi 10.7326/0003-4819-153-7-201010050-00006
+- Windred DP et al, Sleep regularity is a stronger predictor of mortality risk than sleep duration, Sleep 2024, 47(1), zsad253, doi 10.1093/sleep/zsad253
+- He Y et al, The transcriptional repressor DEC2 regulates sleep length in mammals, Science 2009, 325(5942), 866-870, doi 10.1126/science.1174443
+- Brown TM et al, Recommendations for daytime, evening, and nighttime indoor light exposure to best support physiology, sleep, and wakefulness in healthy adults, PLOS Biology 2022, 20(3), e3001571, doi 10.1371/journal.pbio.3001571
+- Chang AM, Aeschbach D, Duffy JF, Czeisler CA, Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness, PNAS 2015, 112(4), 1232-1237, doi 10.1073/pnas.1418490112
+- Drake C, Roehrs T, Shambroom J, Roth T, Caffeine effects on sleep taken 0, 3, or 6 hours before going to bed, Journal of Clinical Sleep Medicine 2013, 9(11), 1195-1200, doi 10.5664/jcsm.3170
+
+---
+
+# The AI Marketing Stack I Built Without Being an Engineer
+
+*The AI tools behind my LinkedIn writing, and the lessons any marketer can take from them.*
+
+By Dev Narsinghani. He writes about food labels, sleep and AI for marketing. Published 30 September 2026. https://devnarsinghani22.github.io/writing/my-ai-marketing-stack/
+
+I was Chief of Staff at Food Pharmer and on the founding team at Only What's Needed. My work was food labels and brand, and I'm not an engineer.
+
+Over the last few months I built a small AI system to help with my own LinkedIn. It drafts, checks, designs and learns.
+
+The writing and image models run free on my own laptop.
+
+Here is what's inside, and the lesson each part taught me.
+
+## Part 1, a study before any tool
+
+I didn't start with a tool. I started by studying what already worked for 9 health creators.
+
+Each post was scored against its own creator's usual numbers. A big account can't win just by being big.
+
+That study became my guide. 2 findings changed what I make:
+
+- Posts that turned a number into something you can picture did 2.3 times better. Half the jar is sugar is easier to feel than a gram count.
+- Carousels did about 1.7 times better than the creator's normal post.
+
+The lesson for marketers is simple. Compare each post with the same creator's normal, never with the whole feed.
+
+## Part 2, rules that live in code
+
+I have a lot of writing rules. No em dashes, no sentence starting with And, and a one-line hook.
+
+For a while those rules lived in a document. I kept breaking them, and so did the AI.
+
+So I moved them into 2 checkers. One runs while I draft and scores the post. The other runs on the final draft and flags anything that breaks a rule.
+
+Some rules it enforces:
+
+- The first line must be one sentence and fit on a phone screen.
+- Words a 10-year-old wouldn't know get flagged, each with a plain swap.
+- Brand names in a negative frame get flagged.
+- A number with no source gets flagged.
+
+This lesson is the most useful one in the whole setup, so here it is plainly. A rule you have to remember is one you'll break. Write it as a check.
+
+## Part 3, a learning loop that can't overreact
+
+I note the likes, comments and reposts on my own posts. A script turns that into weights.
+
+Those weights tell the writer which topics, formats and visuals are working for my audience.
+
+I put 3 limits on it:
+
+- Nothing moves off neutral until there are at least 4 posts of data.
+- The top 10% of results are capped, so one viral post can't dominate.
+- Every weight stays between half and 1.6 times normal.
+
+One lucky post should never rewrite your whole strategy. The lesson is to make your learning loop slow on purpose.
+
+## Part 4, visuals where AI never draws a number
+
+AI image models are great at mood and bad at exact digits. A wrong digit on a health post would hurt trust in me more than anything else.
+
+So every number and table is built as a web page, then screenshotted with Playwright. That gives a sharp image every time.
+
+For photo-style scenes I run FLUX.1-dev locally through ComfyUI. It makes the background, and the real numbers get laid on top.
+
+The lesson is to split the job. Let the image model make the picture, and never let it write a number.
+
+## Part 5, small local models, each with one job
+
+I use Ollama to run open models on my own graphics card. Each model does a single task:
+
+- A drafting model writes a first version from a fact sheet. I picked it in a blind test of 5 models.
+- A second model reads each draft the way a 10-year-old would, and flags anything confusing.
+- A vision model reads a photo of a pack and turns the label into a fact sheet.
+
+The label reader reads every photo twice. If the 2 reads disagree on a number, it's thrown out. A misread digit can't slip through.
+
+I still read every draft, and I bin the ones that miss. I have thrown out more than a few.
+
+The lesson is to test models blind on your own task. The famous name isn't always the one that writes best for you.
+
+## Part 6, a second AI whose job is to disagree
+
+This is the part I'm proudest of.
+
+I had a batch of sleep posts with research behind each claim. First, every claim went to one AI agent to check against the original paper.
+
+A second agent then tried to prove the first one wrong.
+
+23 of the 24 fact sheets needed a fix, from wrong numbers to wrong papers. A few said more than the study did.
+
+None of those errors went live, because the check ran first.
+
+The lesson for any marketer using AI is blunt. AI sounds sure of itself even when it's wrong. Make checking cheap, and have a second AI try to prove the first one wrong.
+
+## What you can steal without writing code
+
+You don't need my setup to use these ideas. Here's the short version:
+
+- Study your own niche's best posts before you copy a format.
+- Judge each post against the same creator's normal.
+- Turn your style guide into a checklist something can run.
+- Keep your AI images away from facts and numbers.
+- Test AI tools blind on your real work.
+- Have a second pass that tries to prove the first one wrong.
+
+I built all of this with AI tools after hours, one small piece at a time. The hard part was knowing the problem well, and the code came second.
+
+Which one would help your team first, the checker or the second AI that disagrees?
+
+## Sources
+
+Every number above comes from one of these.
+
+- Author's own review of public posts from 9 health and food creators, 2026, each compared with that creator's usual engagement
+- Author's own citation audit of 24 sleep fact sheets, August 2026 (one checking agent per claim, then one refuting agent; 23 needed corrections)
+- Playwright, open-source tool by Microsoft that turns a web page into an image, playwright.dev
+- FLUX.1-dev image model by Black Forest Labs; ComfyUI, open-source image workflow tool, comfy.org
+- Ollama, local model runner, ollama.com
