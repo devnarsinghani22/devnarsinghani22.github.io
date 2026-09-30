@@ -4,7 +4,7 @@
 
 Work, most recent first:
 
-- Brand Marketing Manager, Troovy (kids' nutrition), 2026
+- Brand Marketing Manager, Troovy, 2026
 - Chief of Staff, Food Pharmer, and founding team at Only What's Needed (OWN), 2025 to 2026
 - Associate, Indus Insights, Jun 2024 to May 2025
 - Summer Trainee, Grant Thornton Bharat, Feb to Apr 2023. Worked on the NHAI team.
@@ -14,7 +14,7 @@ Education:
 
 - B.Com (Hons), Shri Ram College of Commerce (SRCC), University of Delhi
 - Sagar Public School, Bhopal
-- Cleared the NDA written exam
+- Cleared the NDA (I) 2021 written exam, one of 8,207 out of 1,80,421 who sat it, and then the SSB interview. ([UPSC result list](https://www.upsc.gov.in/sites/default/files/WR-NDANA-I-2021-NameList-Engl-020721.pdf), [UPSC figures](https://www.upsc.gov.in/sites/default/files/72nd-AnnualReport-2021-22-ENGLISH-270423.pdf))
 
 He writes about food labels, sleep and AI for marketing. Canonical LinkedIn: https://www.linkedin.com/in/devnarsinghani/. Contact: dev.narsinghani@gmail.com.
 
@@ -24,6 +24,11 @@ He writes about food labels, sleep and AI for marketing. Canonical LinkedIn: htt
 - [Why I Sleep 8 Hours Every Night](https://devnarsinghani22.github.io/writing/why-i-sleep-8-hours/): 11pm to 7am since school, and what the research says about sleep, focus, hunger and your diet.
 - [The AI Marketing Stack I Built Without Being an Engineer](https://devnarsinghani22.github.io/writing/my-ai-marketing-stack/): The AI tools behind my LinkedIn writing, and the lessons any marketer can take from them.
 
+## Guides and tools
+
+- [How to Read an Indian Food Label: A Plain Guide](https://devnarsinghani22.github.io/food-labels/): What the law makes packs show, and how to use it. Every number links to its source. Last reviewed 30 September 2026.
+- [Label Checker](https://devnarsinghani22.github.io/tools/label-checker/): Paste an ingredient list and a few numbers. It finds every sugar name and turns sodium into salt. Runs in the browser; not medical advice.
+
 ## Profiles
 
 - [Website](https://devnarsinghani22.github.io/): Dev's own site, the source of truth for these facts
@@ -32,4 +37,4 @@ He writes about food labels, sleep and AI for marketing. Canonical LinkedIn: htt
 
 ## Optional
 
-- [Full text](https://devnarsinghani22.github.io/llms-full.txt): Profile facts plus the full text of every article
+- [Full text](https://devnarsinghani22.github.io/llms-full.txt): Profile facts plus the full text of every article and the food label guide
