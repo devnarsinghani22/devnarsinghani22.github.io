@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Label Checker: find hidden sugar and salt on Indian food labels | Dev Narsinghani</title>
+<meta name="description" content="Paste an ingredient list and a few numbers. It finds every sugar name and turns sodium into salt.">
+<meta name="author" content="Dev Narsinghani">
+<link rel="canonical" href="https://devnarsinghani22.github.io/tools/label-checker/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dev Narsinghani">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="Label Checker: find hidden sugar and salt on Indian food labels">
+<meta property="og:description" content="Paste an ingredient list and a few numbers. It finds every sugar name and turns sodium into salt.">
+<meta property="og:url" content="https://devnarsinghani22.github.io/tools/label-checker/">
+<meta property="og:image" content="https://devnarsinghani22.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Label Checker, a free tool by Dev Narsinghani to find sugar names and salt on Indian food labels">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Label Checker: find hidden sugar and salt on Indian food labels">
+<meta name="twitter:description" content="Paste an ingredient list and a few numbers. It finds every sugar name and turns sodium into salt.">
+<meta name="twitter:image" content="https://devnarsinghani22.github.io/og.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Dev Narsinghani: writing" href="/feed.xml">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://devnarsinghani22.github.io/tools/label-checker/#app",
+  "name": "Label Checker",
+  "description": "Paste an ingredient list and a few numbers. It finds every sugar name and turns sodium into salt.",
+  "url": "https://devnarsinghani22.github.io/tools/label-checker/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript. Works offline once loaded.",
+  "inLanguage": "en-IN",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "author": {
+    "@type": "Person",
+    "@id": "https://devnarsinghani22.github.io/#dev",
+    "name": "Dev Narsinghani",
+    "url": "https://devnarsinghani22.github.io/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "@id": "https://devnarsinghani22.github.io/#dev",
+    "name": "Dev Narsinghani",
+    "url": "https://devnarsinghani22.github.io/"
+  },
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "subjectOf": {
+    "@type": "Article",
+    "@id": "https://devnarsinghani22.github.io/food-labels/#article",
+    "url": "https://devnarsinghani22.github.io/food-labels/"
+  }
+}
+</script>
+</head>
+<body>
+<main>
+  <header class="site"><a href="/">Dev Narsinghani</a><nav><a href="/writing/">Writing</a></nav></header>
+  <article class="tool">
+    <h1>Label Checker</h1>
+    <p class="dek">Paste an ingredient list and a few numbers. It finds every sugar name and turns sodium into salt.</p>
+    <p class="byline">By <a href="/" rel="author">Dev Narsinghani</a>. How it works, with sources: <a href="/food-labels/">How to Read an Indian Food Label</a>.</p>
+    <p class="note"><strong>This tool does maths on what you paste. It is not medical advice.</strong> Nothing you type leaves your browser.</p>
+    <noscript><p class="note">This tool needs JavaScript. The <a href="/food-labels/">guide</a> explains the same maths.</p></noscript>
+
+    <form id="checker" novalidate>
+      <div class="samples" id="samples" role="group" aria-label="Try a made-up sample"><span class="muted">Try a made-up sample:</span></div>
+
+      <label for="ingredients">Ingredient list</label>
+      <p class="hint" id="ingredients-hint">Copy it from the back of the pack, in the same order.</p>
+      <textarea id="ingredients" rows="6" aria-describedby="ingredients-hint" spellcheck="false"></textarea>
+
+      <fieldset>
+        <legend>Nutrition per 100 g (optional)</legend>
+        <div class="grid">
+          <div><label for="sugar">Sugar (g)</label><input id="sugar" inputmode="decimal" autocomplete="off" aria-describedby="sugar-hint"><p class="hint" id="sugar-hint">Use added sugars if the pack shows them.</p></div>
+          <div><label for="sodium">Sodium</label><input id="sodium" inputmode="decimal" autocomplete="off">
+            <div class="unit" role="radiogroup" aria-label="Sodium unit">
+              <label><input type="radio" name="sodium-unit" value="mg" checked> mg</label>
+              <label><input type="radio" name="sodium-unit" value="g"> g</label>
+            </div></div>
+          <div><label for="fat">Total fat (g)</label><input id="fat" inputmode="decimal" autocomplete="off"></div>
+          <div><label for="serving">Serving size (g, optional)</label><input id="serving" inputmode="decimal" autocomplete="off"></div>
+        </div>
+      </fieldset>
+      <p class="actions"><button type="submit">Check</button> <button type="button" id="clear" class="secondary">Clear</button></p>
+    </form>
+
+    <p id="errors" class="errors" role="alert" hidden></p>
+    <section aria-labelledby="results-h">
+      <h2 id="results-h" tabindex="-1">Results</h2>
+      <p id="summary" class="summary" aria-live="polite"></p>
+      <div id="results" hidden>
+        <h3>Sugar names in the list</h3>
+        <p id="sugar-count"></p>
+        <div><p class="hint">Your list, with sugar names marked:</p><p id="highlight" class="highlight"></p></div>
+        <ul id="sugar-list"></ul>
+        <h3>Salt</h3>
+        <ul id="salt-out"></ul>
+        <h3>Sugar in teaspoons</h3>
+        <ul id="sugar-out"></ul>
+        <h3>Fat</h3>
+        <ul id="fat-out"></ul>
+      </div>
+    </section>
+
+    <h2>How it works</h2>
+    <ul>
+      <li>It looks for the sugar names listed in the <a href="/food-labels/#how-do-i-find-hidden-sugar">guide's table</a>. It matches whole words only, so 'sugarcane' on its own is not counted as sugar. Claim words like 'sugar free' and 'no added sugar' are skipped.</li>
+      <li>The first 3 ingredients are the first 3 items split by commas or semicolons. A new line starts a new item only when the list has no commas or semicolons, so a name broken across two lines still counts once. A sugar inside the brackets of an item is part of that item, so it is not counted as one of the first 3 ingredients.</li>
+      <li>Salt is sodium x 2.5. The daily line is 5 g of salt for adults, from WHO and ICMR-NIN.</li>
+      <li>One teaspoon of sugar is taken as about 4 g. WHO says 25 g is about 6 teaspoons (<a href="/food-labels/#src-7">source</a>). Some guides use 5 g, so this is a rough figure.</li>
+      <li>A value that is too high is left out of the maths until it is fixed. You can type the unit too, like '650 mg' or '12 g'. A unit you type wins over the mg or g button.</li>
+      <li>The samples are made up. They are not copied from any real pack.</li>
+    </ul>
+  </article>
+  <p><a href="/food-labels/">How to Read an Indian Food Label</a> · <a href="/writing/read-a-food-label-in-10-seconds/">Read a food label in 10 seconds</a> · <a href="/">About Dev</a></p>
+  <footer>Dev Narsinghani · Mumbai, India · <a href="/writing/">Writing</a> · <a href="/feed.xml">Feed</a></footer>
+</main>
+<script>
+(function () {
+  "use strict";
+  var ALIASES = [{"n": "Sugar, sucrose", "p": ["sugars?", "sucrose", "refined sugar", "white sugar", "plantation white sugar", "icing sugar", "caster sugar", "powdered sugar", "cane sugar", "sugar syrup"], "k": "sugar"}, {"n": "Brown sugar, raw cane sugar", "p": ["brown sugar", "raw sugar", "raw cane sugar", "demerara sugar"], "k": "sugar"}, {"n": "Cane juice, sugarcane juice", "p": ["(?:evaporated )?(?:sugar[\\s-]*)?cane juice(?: solids)?"], "k": "sugar"}, {"n": "Khandsari, khaand, bura, misri", "p": ["khandsari(?: sugar)?", "desi khaa?nd", "khaa?nd(?: sugar)?", "bura(?: sugar)?", "misri", "mishri"], "k": "sugar"}, {"n": "Jaggery, gur, gud, shakkar", "p": ["jaggery", "gur", "gud", "shakkar", "panela", "palm jaggery", "date jaggery", "jaggery powder"], "k": "sugar"}, {"n": "Coconut sugar, palm sugar", "p": ["coconut sugar", "palm sugar", "coconut palm sugar"], "k": "sugar"}, {"n": "Dextrose, glucose", "p": ["dextrose", "dextrose monohydrate", "anhydrous dextrose", "glucose"], "k": "sugar"}, {"n": "Trehalose", "p": ["trehalose"], "k": "sugar"}, {"n": "Liquid glucose, glucose syrup", "p": ["liquid glucose", "glucose syrup", "glucose\\s*-?\\s*fructose syrup", "fructose\\s*-?\\s*glucose syrup"], "k": "sugar"}, {"n": "Dried glucose syrup, glucose syrup solids", "p": ["dried glucose syrup", "glucose syrup solids", "glucose solids"], "k": "sugar"}, {"n": "Invert sugar, invert syrup, golden syrup", "p": ["invert sugar(?: syrup)?", "invert syrup", "inverted sugar(?: syrup)?", "golden syrup"], "k": "sugar"}, {"n": "Fructose, fruit sugar", "p": ["fructose", "fruit sugar"], "k": "sugar"}, {"n": "Corn syrup, high-fructose corn syrup", "p": ["high[\\s-]+fructose corn syrup", "hfcs", "corn syrup(?: solids)?", "maize syrup"], "k": "sugar"}, {"n": "Rice syrup, maple syrup, agave", "p": ["(?:brown )?rice syrup", "maple syrup", "agave(?: syrup| nectar)?", "(?:coconut|palm) nectar", "fruit syrup"], "k": "sugar"}, {"n": "Maltose, malt extract, malt syrup", "p": ["maltose", "malt sugar", "(?:barley )?malt extract", "malt syrup"], "k": "sugar"}, {"n": "Lactose", "p": ["lactose"], "k": "sugar"}, {"n": "Honey", "p": ["honey"], "k": "sugar"}, {"n": "Molasses", "p": ["(?:edible |cane |sugar[\\s-]*cane )?molasses", "treacle"], "k": "sugar"}, {"n": "Fruit juice concentrate", "p": ["(?<!lemon |lime |carrot |beetroot |beet |tomato )(?:(?!and |or |with |of |lemon |lime |carrot |beetroot |beet |tomato )[a-z]+ )?juice concentrates?", "concentrated (?:(?!and |or |with |of |lemon |lime |carrot |beetroot |beet |tomato )[a-z]+ )?juice", "(?<!lemon |lime |carrot |beetroot |beet |tomato )(?:(?!and |or |with |of |lemon |lime |carrot |beetroot |beet |tomato )[a-z]+ )?juice from concentrates?", "(?!and |or |with |of |lemon |lime |carrot |beetroot |beet |tomato )[a-z]+(?= (?:and|&) (?:lemon|lime) juice (?:from )?concentrates?)"], "k": "sugar"}, {"n": "Date paste, date syrup, dried fruit paste", "p": ["date paste", "dates? syrup", "dried fruit paste", "fruit paste"], "k": "sugar"}, {"n": "Jam, jelly, sweetened chocolate, sweetened fruit pieces", "p": ["jam", "jelly", "sweetened (?:[a-z]+ )?pieces", "candied (?:[a-z]+ )?(?:peel|fruit|pieces)", "tutti[\\s-]*frutti", "sweetened (?:milk |compound )?chocolate", "compound chocolate"], "k": "sugar"}, {"n": "Sweetened condensed milk", "p": ["(?<!unsweetened )(?:sweetened )?condensed (?:(?:partly )?skim(?:med)? )?milk(?! \\(?unsweetened)"], "k": "sugar"}, {"n": "Maltodextrin", "p": ["maltodextrins?"], "k": "starch"}, {"n": "Maltitol, sorbitol", "p": ["maltitol", "sorbitol"], "k": "polyol"}];
+  var SAMPLES = [{"label": "Sample: iced tea powder (made up)", "ingredients": "Ingredients: Sugar, dextrose, acidity regulator, tea extract, lemon flavour", "sugar": "90", "sodium": "20", "unit": "mg", "fat": "0", "serving": "20"}, {"label": "Sample: namkeen mix (made up)", "ingredients": "Gram flour, edible vegetable oil, masala [salt, sugar, spices], peanuts, lentils, dextrose", "sugar": "5", "sodium": "800", "unit": "mg", "fat": "30", "serving": "30"}, {"label": "Sample: instant soup mix (made up)", "ingredients": "Corn starch, salt, dehydrated vegetables [carrot, onion, sugar, maltodextrin, spices]; dextrose; flavour enhancer", "sugar": "4", "sodium": "1.2", "unit": "g", "fat": "3", "serving": "15"}];
+  var SALT_DAY = 5, TSP = 4;
+  var $ = function (id) { return document.getElementById(id); };
+
+  // one regex per pattern; whole words only, so "sugarcane" is not read as "sugar"
+  var RULES = [];
+  ALIASES.forEach(function (a, i) {
+    // every space also matches a line break, so a name wrapped across two lines is still found
+    a.p.forEach(function (p) { RULES.push({ i: i, re: new RegExp("(^|[^a-z0-9])(" + p.replace(/ /g, "\\s+") + ")(?![a-z])", "gi") }); });
+  });
+
+  function escHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function findSugars(text) {
+    var hits = [];
+    RULES.forEach(function (r) {
+      r.re.lastIndex = 0;
+      var m;
+      while ((m = r.re.exec(text)) !== null) {
+        var start = m.index + m[1].length, end = start + m[2].length;
+        hits.push({ start: start, end: end, i: r.i });
+        r.re.lastIndex = end;
+      }
+    });
+    // longest match wins where two overlap ("brown sugar" beats "sugar")
+    hits.sort(function (a, b) { return a.start - b.start || (b.end - b.start) - (a.end - a.start); });
+    var kept = [], last = -1;
+    hits.forEach(function (h) {
+      if (h.start < last) return;
+      var word = text.slice(h.start, h.end).toLowerCase();
+      var after = text.slice(h.end, h.end + 16).toLowerCase();
+      var before = text.slice(Math.max(0, h.start - 24), h.start).toLowerCase();
+      // claim words, not ingredients: "sugar free", "lactose-free", "no added sugar", "contains naturally occurring sugars"
+      if (/^[\s-]*free/.test(after)) return;
+      if (/^sugars?$/.test(word)) {
+        if (/^\s*alcohols?/.test(after)) return;
+        if (/^[\s-]*cane[\s-]+(fibre|fiber|bagasse)/.test(after)) return;
+        if (/no\s+added\s*$/.test(before) || /naturally\s+occurring\s*$/.test(before)) return;
+      }
+      kept.push(h); last = h.end;
+    });
+    return kept;
+  }
+
+  // top-level ingredients: split on , and ; outside brackets. If the list has no , or ; at all,
+  // every new line is an item, unless it falls inside a sugar name; otherwise a new line is only a name wrapped mid-way.
+  // items.brackets holds the [start, end] of every top-level bracket, so a sugar inside one is not a main ingredient.
+  function splitIngredients(text, hits) {
+    var start = 0;
+    var lead = /^\s*ingredients?\s*(?:[:\-]|\n)/i.exec(text);
+    if (lead) start = lead[0].length;
+    var hasSep = /[,;]/.test(text.slice(start));
+    // an opening bracket that is never closed is ignored, so it cannot swallow the rest of the list
+    var stack = [], unclosed = {};
+    for (var j = start; j < text.length; j++) {
+      var cj = text[j];
+      if (cj === "(" || cj === "[" || cj === "{") stack.push(j);
+      else if ((cj === ")" || cj === "]" || cj === "}") && stack.length) stack.pop();
+    }
+    stack.forEach(function (j) { unclosed[j] = true; });
+    var items = [], depth = 0, from = start, open = -1;
+    items.brackets = [];
+    for (var k = start; k <= text.length; k++) {
+      var c = k < text.length ? text[k] : ",";
+      var nl = c === "\n" && !hasSep && !hits.some(function (h) { return k > h.start && k < h.end; });
+      if ((c === "(" || c === "[" || c === "{") && !unclosed[k]) { if (depth === 0) open = k; depth++; }
+      else if ((c === ")" || c === "]" || c === "}") && depth > 0) { depth--; if (depth === 0) items.brackets.push([open, k]); }
+      else if (k === text.length || (depth === 0 && (c === "," || c === ";" || nl))) {
+        var raw = text.slice(from, k);
+        var t = raw.replace(/^[\s.]+|[\s.]+$/g, "");
+        if (t) {
+          var off = raw.indexOf(t);
+          items.push({ start: from + off, end: from + off + t.length, text: t });
+        }
+        from = k + 1;
+      }
+    }
+    return items;
+  }
+
+  function num(id) {
+    var v = $(id).value.trim();
+    if (v === "") return null;
+    // a unit typed with the number: "650 mg", "12g"
+    // for sodium the typed unit is read in run(); it never changes the mg/g buttons
+    var u = /\s*(mg|g)$/i.exec(v), scale = 1;
+    if (u) {
+      v = v.slice(0, u.index);
+      if (id !== "sodium" && u[1].toLowerCase() === "mg") scale = 1000;
+    }
+    // "1 200" is a thousands space; "12." is a number still being typed
+    v = v.replace(/(\d) (?=\d{3}\b)/g, "$1").replace(/\.$/, "");
+    // "1,200" and "1,234.5" are thousands; "0,8" is a decimal comma
+    // a leading 0 is never a thousands group, so "0,800" is 0.8
+    if (/^[1-9]\d{0,2}(,\d{3})+(\.\d+)?$/.test(v)) v = v.replace(/,/g, "");
+    else if (/^\d+,\d{1,3}$/.test(v)) v = v.replace(",", ".");
+    // plain decimals only: no hex, no 1e3
+    if (!/^\d*\.?\d+$/.test(v)) return NaN;
+    var n = Number(v) / scale;
+    return isFinite(n) ? n : NaN;
+  }
+
+  function fmt(n, d) {
+    if (d === undefined) d = 1;
+    var s = n.toFixed(d);
+    if (s.indexOf(".") >= 0) s = s.replace(/0+$/, "").replace(/\.$/, "");
+    return s;
+  }
+
+  function pct(x) { return x > 0 && x < 1 ? "under 1%" : fmt(x, 0) + "%"; }
+  function grams(x) { return x === 0 ? "0" : x < 0.01 ? "less than 0.01" : "about " + fmt(x, 2); }
+  function tsp(g) {
+    if (g === 0) return "no teaspoons";
+    if (g / TSP < 0.05) return "less than 0.1 teaspoons";
+    var t = fmt(g / TSP); return "about " + t + (t === "1" ? " teaspoon" : " teaspoons");
+  }
+  function li(parent, text) { var e = document.createElement("li"); e.textContent = text; parent.appendChild(e); return e; }
+
+  function run() {
+    var text = $("ingredients").value;
+    var sugar = num("sugar"), sodium = num("sodium"), fat = num("fat"), serving = num("serving");
+    var radioUnit = document.querySelector('input[name="sodium-unit"]:checked').value;
+    var typedUnit = (/(mg|g)\s*$/i.exec($("sodium").value.trim()) || [])[1];
+    var unit = typedUnit ? typedUnit.toLowerCase() : radioUnit;
+    var errs = [];
+    var MAX = { sugar: 100, sodium: unit === "g" ? 40 : 40000, fat: 100, serving: 5000 };
+    [["sugar", sugar, "Sugar"], ["sodium", sodium, "Sodium"], ["fat", fat, "Fat"], ["serving", serving, "Serving size"]]
+      .forEach(function (x) {
+        if (x[1] === null) return;
+        if (isNaN(x[1]) || x[1] < 0) errs.push(x[2] + " needs a number of 0 or more.");
+        else if (x[1] > MAX[x[0]]) errs.push(x[2] + " looks too high, so it is left out. Check the number" + (x[0] === "sodium" ? " and the mg or g choice." : "."));
+      });
+    var out = $("results"), err = $("errors");
+    err.textContent = errs.join(" ");
+    err.hidden = errs.length === 0;
+    // a value is used only when it is a number of 0 or more and not above its limit
+    var ok = function (v, k) { return v !== null && !isNaN(v) && v >= 0 && (!k || v <= MAX[k]); };
+    var hasAny = text.trim() !== "" || ok(sugar, "sugar") || ok(sodium, "sodium") || ok(fat, "fat");
+    if (!hasAny) {
+      out.hidden = true;
+      $("summary").textContent = "Paste an ingredient list, or type a number from the nutrition table, to start.";
+      return;
+    }
+    out.hidden = false;
+    var srv = ok(serving, "serving") && serving > 0 ? serving : null;
+
+    // (a) sugar names
+    var hits = findSugars(text);
+    var items = splitIngredients(text, hits);
+    var top3End = items.length ? items[Math.min(3, items.length) - 1].end : 0;
+    // a sugar inside the brackets of an item is part of that item, not one of the main ingredients
+    var inBrackets = function (h) { return items.brackets.some(function (b) { return h.start > b[0] && h.start < b[1]; }); };
+    var distinct = {}, other = {}, top3 = {};
+    hits.forEach(function (h) {
+      var a = ALIASES[h.i];
+      if (a.k === "sugar") { distinct[a.n] = true; if (h.start < top3End && !inBrackets(h)) top3[a.n] = true; }
+      else other[a.n] = true;
+    });
+    var nSugar = Object.keys(distinct).length, nTop = Object.keys(top3).length;
+    var html = "", pos = 0;
+    hits.forEach(function (h) {
+      var a = ALIASES[h.i];
+      html += escHtml(text.slice(pos, h.start)) + '<mark class="' + a.k + '" title="' + escHtml(a.n) + '">' + escHtml(text.slice(h.start, h.end)) + "</mark>";
+      pos = h.end;
+    });
+    html += escHtml(text.slice(pos));
+    $("highlight").innerHTML = html || '<span class="muted">No ingredient list pasted.</span>';
+    $("highlight").parentElement.hidden = text.trim() === "";
+    var sl = $("sugar-list"); sl.innerHTML = "";
+    Object.keys(distinct).forEach(function (n) { li(sl, n + (top3[n] ? " (in the first 3 ingredients)" : "")); });
+    Object.keys(other).forEach(function (n) { li(sl, n + " (not a sugar in law, see the guide)"); });
+    $("sugar-count").textContent = text.trim() === "" ? "" :
+      (nSugar === 0 ? "No sugar names found in this list." :
+       (nSugar === 1 ? "1 sugar name found. " : nSugar + " different sugar names found. ") +
+       (nSugar === 1 && nTop === 1 ? "It is in the first 3 ingredients." :
+        nTop ? nTop + " of them " + (nTop === 1 ? "is" : "are") + " in the first 3 ingredients." : "None of them is in the first 3 ingredients.")) +
+      (items.length ? " The list has " + items.length + " main ingredient" + (items.length === 1 ? "" : "s") + "." : "");
+
+    // (b) salt
+    var saltBox = $("salt-out"); saltBox.innerHTML = "";
+    var salt100 = null;
+    if (ok(sodium, "sodium")) {
+      var sodG = unit === "mg" ? sodium / 1000 : sodium;
+      salt100 = sodG * 2.5;
+      li(saltBox, "Sodium " + fmt(sodG, 3) + " g x 2.5 = " + grams(salt100) + " g of salt per 100 g.");
+      li(saltBox, "That is " + pct(salt100 / SALT_DAY * 100) + " of the under 5 g of salt a day that WHO recommends for adults, in 100 g.");
+      if (srv) {
+        var ss = salt100 * srv / 100;
+        li(saltBox, "In one " + fmt(srv) + " g serving: " + grams(ss) + " g of salt, " + pct(ss / SALT_DAY * 100) + " of the 5 g a day for adults, from WHO and ICMR-NIN.");
+      }
+      if (typedUnit && unit !== radioUnit) li(saltBox, "Using " + unit + " because you typed " + unit + ".");
+      if (unit === "mg" && sodium > 0 && sodium < 5) li(saltBox, "Check: " + fmt(sodium, 3) + " mg is very little. If the label says g, switch the unit to g.");
+      if (unit === "g" && sodium > 10) li(saltBox, "Check: " + fmt(sodium) + " g of sodium per 100 g is a lot. If the label says mg, switch the unit to mg.");
+    } else li(saltBox, "Add sodium per 100 g to see the salt.");
+
+    // (c) sugar
+    var sugBox = $("sugar-out"); sugBox.innerHTML = "";
+    if (ok(sugar, "sugar")) {
+      li(sugBox, fmt(sugar) + " g per 100 g is " + tsp(sugar) + " of sugar.");
+      li(sugBox, "One teaspoon of sugar is about 4 g. WHO says 25 g is about 6 teaspoons.");
+      li(sugBox, "So " + (sugar >= 1 ? "about " : "") + pct(sugar) + " of the food's weight is the sugar you entered.");
+      if (srv) li(sugBox, "In one " + fmt(srv) + " g serving: about " + fmt(sugar * srv / 100) + " g, or " + tsp(sugar * srv / 100) + ".");
+    } else li(sugBox, "Add sugar per 100 g to see it in teaspoons.");
+
+    // fat
+    var fatBox = $("fat-out"); fatBox.innerHTML = "";
+    if (ok(fat, "fat")) {
+      li(fatBox, fat === 0 ? "No fat." : "About " + fmt(fat, fat < 1 ? 1 : 0) + "% of the food's weight is fat.");
+      if (srv) li(fatBox, "In one " + fmt(srv) + " g serving: " + grams(fat * srv / 100) + " g of fat, " + pct(fat * srv / 100 / 67 * 100) + " of the 67 g daily figure FSSAI uses for % RDA.");
+    } else li(fatBox, "Add fat per 100 g to see it here.");
+
+    // (d) summary
+    var parts = [];
+    if (text.trim() !== "") {
+      parts.push(nSugar === 0 ? "No sugar names in the list." :
+        "Sugar shows up under " + nSugar + " name" + (nSugar === 1 ? "" : "s") +
+        (nSugar === 1 && nTop === 1 ? ". It is in the first 3 ingredients." :
+         nTop ? ", " + nTop + " of them in the first 3 ingredients." : ", none in the first 3 ingredients."));
+    }
+    var per = [];
+    if (ok(sugar, "sugar")) per.push(tsp(sugar) + " of sugar");
+    if (salt100 !== null) per.push(grams(salt100) + " g of salt");
+    if (ok(fat, "fat")) per.push(fmt(fat) + " g of fat");
+    if (per.length) parts.push("Per 100 g: " + per.join(", ") + ".");
+    $("summary").textContent = parts.join(" ");
+  }
+
+  function fill(s) {
+    $("ingredients").value = s.ingredients;
+    $("sugar").value = s.sugar; $("sodium").value = s.sodium; $("fat").value = s.fat; $("serving").value = s.serving;
+    document.querySelector('input[name="sodium-unit"][value="' + s.unit + '"]').checked = true;
+    clearTimeout(timer);
+    run();
+    $("results-h").focus();
+  }
+
+  var box = $("samples");
+  SAMPLES.forEach(function (s) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "sample"; b.textContent = s.label;
+    b.addEventListener("click", function () { fill(s); });
+    box.appendChild(b);
+  });
+  $("checker").addEventListener("submit", function (e) { e.preventDefault(); clearTimeout(timer); run(); $("results-h").focus(); });
+  // live results while typing, but only after a pause, so screen readers do not read out every keystroke
+  var timer = null;
+  $("checker").addEventListener("input", function () { clearTimeout(timer); timer = setTimeout(run, 600); });
+  $("checker").addEventListener("change", run);
+  $("clear").addEventListener("click", function () { clearTimeout(timer); $("checker").reset(); run(); $("ingredients").focus(); });
+  run();
+})();
+</script>
+</body>
+</html>
