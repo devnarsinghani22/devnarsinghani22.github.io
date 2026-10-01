@@ -36,7 +36,7 @@
   "url": "https://devnarsinghani22.github.io/tools/label-checker/",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
-  "browserRequirements": "Requires JavaScript. Works offline once loaded.",
+  "browserRequirements": "Requires JavaScript. Barcode lookup and photo reading need an internet connection.",
   "inLanguage": "en-IN",
   "isAccessibleForFree": true,
   "offers": {
@@ -73,8 +73,22 @@
     <h1>Label Checker</h1>
     <p class="dek">Paste an ingredient list and a few numbers. It finds every sugar name and turns sodium into salt.</p>
     <p class="byline">By <a href="/" rel="author">Dev Narsinghani</a>. How it works, with sources: <a href="/food-labels/">How to Read an Indian Food Label</a>.</p>
-    <p class="note"><strong>This tool does maths on what you paste. It is not medical advice.</strong> Nothing you type leaves your browser.</p>
+    <p class="note"><strong>This tool does maths on what you paste. It is not medical advice.</strong> What you type stays in your browser. A barcode lookup asks Open Food Facts for that product. A photo is read on your device and is not uploaded.</p>
     <noscript><p class="note">This tool needs JavaScript. The <a href="/food-labels/">guide</a> explains the same maths.</p></noscript>
+
+    <section class="get" aria-labelledby="get-h">
+      <h2 id="get-h">Skip the typing</h2>
+      <form id="get-form" class="get-row" novalidate>
+        <label for="code">Barcode number or Open Food Facts link</label>
+        <div class="get-line"><input id="code" inputmode="numeric" autocomplete="off" placeholder="e.g. 8901234567890"><button type="submit">Look up</button></div>
+      </form>
+      <div class="get-row">
+        <label for="photo" class="photo-btn">Photo of the pack (barcode or the list at the back)</label>
+        <input id="photo" type="file" accept="image/*" capture="environment">
+      </div>
+      <p id="get-status" class="get-status" role="status" aria-live="polite"></p>
+      <p class="hint">Product data comes from <a href="https://world.openfoodfacts.org/">Open Food Facts</a>, filled in by volunteers. Links from shopping apps cannot be read here; use the barcode on the pack.</p>
+    </section>
 
     <form id="checker" novalidate>
       <div class="samples" id="samples" role="group" aria-label="Try a made-up sample"><span class="muted">Try a made-up sample:</span></div>
@@ -393,6 +407,116 @@
   $("checker").addEventListener("change", run);
   $("clear").addEventListener("click", function () { clearTimeout(timer); $("checker").reset(); run(); $("ingredients").focus(); });
   run();
+})();
+</script>
+<script>
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  var OFF = "https://world.openfoodfacts.org/api/v2/product/";
+  var TESS = "https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js";
+
+  function say(msg, bad) { var s = $("get-status"); s.textContent = msg; s.className = "get-status" + (bad ? " bad" : ""); }
+  function setUnit(u) { document.querySelector('input[name="sodium-unit"][value="' + u + '"]').checked = true; }
+  function setVal(id, v) { $(id).value = (v === null || v === undefined || v === "") ? "" : String(v); }
+  function fire() { $("checker").dispatchEvent(new Event("change")); }
+  function num(x) { var n = parseFloat(x); return isFinite(n) ? Math.round(n * 100) / 100 : null; }
+
+  function codeFrom(text) {
+    var t = (text || "").trim();
+    var m = t.match(/\/product\/(\d{8,14})/);
+    if (m) return m[1];
+    m = t.replace(/[\s-]/g, "").match(/^\d{8,14}$/);
+    return m ? m[0] : null;
+  }
+
+  function lookup(code) {
+    say("Looking up " + code + " on Open Food Facts...");
+    var url = OFF + encodeURIComponent(code) + ".json?fields=product_name,ingredients_text_en,ingredients_text,nutriments,serving_quantity";
+    return fetch(url).then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || d.status !== 1 || !d.product) { say("Open Food Facts does not have barcode " + code + " yet. Type the list, or use a photo of the back of the pack.", true); return; }
+      var p = d.product, n = p.nutriments || {};
+      var ing = p.ingredients_text_en || p.ingredients_text || "";
+      setVal("ingredients", ing);
+      setVal("sugar", num(n.sugars_100g));
+      if (n.sodium_100g !== undefined) { setVal("sodium", num(n.sodium_100g)); setUnit("g"); } else setVal("sodium", "");
+      setVal("fat", num(n.fat_100g));
+      setVal("serving", num(p.serving_quantity));
+      fire();
+      var name = p.product_name ? "“" + p.product_name + "”" : "this product";
+      say(ing ? "Filled in from Open Food Facts for " + name + ". It is filled in by volunteers, so check it against your pack."
+              : "Open Food Facts has " + name + " but no ingredient list. Type it from the pack, or use a photo.", !ing);
+    }).catch(function () { say("Could not reach Open Food Facts. Check your connection and try again.", true); });
+  }
+
+  // best effort: the text after "Ingredients" up to the next section of the pack
+  function ingredientsFrom(text) {
+    var t = text.replace(/\r/g, "");
+    var start = t.search(/ingredients?\s*[:\-–]?/i);
+    if (start < 0) return null;
+    var rest = t.slice(start);
+    var stop = rest.search(/\n\s*(nutrition(al)?\s+(information|facts|value)|allergen|contains\s*:|best before|use by|mfd|manufactured|marketed|storage|net\s+(wt|weight|quantity)|fssai|lic\.?\s*no|veg)/i);
+    var part = (stop > 0 ? rest.slice(0, stop) : rest.slice(0, 900)).replace(/\s*\n\s*/g, " ").trim();
+    return part.length > 12 ? part : null;
+  }
+
+  // first number after the nutrient name; on Indian packs the per 100 g column usually comes first
+  function nutrient(text, re) {
+    var m = text.match(re);
+    return m ? num(m[1].replace(",", ".")) : null;
+  }
+
+  function readPhoto(file) {
+    say("Reading the photo on your device. This can take 20 to 40 seconds the first time...");
+    loadTess().then(function () {
+      return window.Tesseract.recognize(file, "eng");
+    }).then(function (res) {
+      var text = (res && res.data && res.data.text) || "";
+      var ing = ingredientsFrom(text);
+      var sugar = nutrient(text, /total\s+sugars?[^0-9\n]{0,14}(\d+(?:[.,]\d+)?)\s*g/i);
+      var sm = text.match(/sodium[^0-9\n]{0,14}(\d+(?:[.,]\d+)?)\s*(mg|g)\b/i);
+      var fat = nutrient(text, /total\s+fat[^0-9\n]{0,14}(\d+(?:[.,]\d+)?)\s*g/i);
+      if (!ing && sugar === null && !sm) { say("I could not read a list from that photo. Try a sharper, straight-on photo of the back of the pack, in good light.", true); return; }
+      if (ing) setVal("ingredients", ing);
+      if (sugar !== null) setVal("sugar", sugar);
+      if (sm) { setVal("sodium", num(sm[1].replace(",", "."))); setUnit(sm[2].toLowerCase()); }
+      if (fat !== null) setVal("fat", fat);
+      fire();
+      say("Read from your photo. Photo reading makes mistakes, so check the list and the numbers against the pack before you trust the result.");
+    }).catch(function () { say("Photo reading did not load. Check your connection, or type the list instead.", true); });
+  }
+
+  var tessP = null;
+  function loadTess() {
+    if (window.Tesseract) return Promise.resolve();
+    if (tessP) return tessP;
+    tessP = new Promise(function (ok, no) {
+      var s = document.createElement("script"); s.src = TESS; s.onload = ok; s.onerror = no; document.head.appendChild(s);
+    });
+    return tessP;
+  }
+
+  function photo(file) {
+    if (!file) return;
+    if ("BarcodeDetector" in window) {
+      say("Looking for a barcode in the photo...");
+      createImageBitmap(file).then(function (bmp) {
+        return new window.BarcodeDetector({ formats: ["ean_13", "ean_8", "upc_a", "upc_e"] }).detect(bmp);
+      }).then(function (codes) {
+        if (codes && codes.length) lookup(codes[0].rawValue); else readPhoto(file);
+      }).catch(function () { readPhoto(file); });
+    } else {
+      readPhoto(file);
+    }
+  }
+
+  $("get-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var code = codeFrom($("code").value);
+    if (!code) { say("Type the barcode number (8 to 14 digits) or paste an Open Food Facts product link. Links from shopping apps cannot be read here.", true); return; }
+    lookup(code);
+  });
+  $("photo").addEventListener("change", function () { photo(this.files && this.files[0]); this.value = ""; });
 })();
 </script>
 </body>
