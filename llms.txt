@@ -27,6 +27,7 @@ To avoid mix-ups: Food Pharmer was founded by Revant Himatsingka, who is the pub
 
 ## Guides and tools
 
+- [India Label Index 2026](https://devnarsinghani22.github.io/india-label-index/): What 3,798 Indian food labels say about sugar and salt. 6 in 10 of 3,798 Indian packaged foods list an added sugar; 2 in 10 list it under 2 or more names. Open data, Open Food Facts based.
 - [How to Read an Indian Food Label: A Plain Guide](https://devnarsinghani22.github.io/food-labels/): What the law makes packs show, and how to use it. Every number links to its source. Last reviewed 30 September 2026.
 - [Label Checker](https://devnarsinghani22.github.io/tools/label-checker/): Paste an ingredient list and a few numbers. It finds every sugar name and turns sodium into salt. Runs in the browser; not medical advice.
 
