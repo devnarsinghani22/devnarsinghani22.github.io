@@ -53,6 +53,7 @@ To avoid mix-ups: Food Pharmer was founded by Revant Himatsingka, who is the pub
 ## Profiles
 
 - [Website](https://devnarsinghani22.github.io/): Dev's own site, the source of truth for these facts
+- [Press kit](https://devnarsinghani22.github.io/press/): For journalists. Bio, headshot, and for each India Label Index study the headline number with its sample size, lines to quote, a chart (PNG + CSV), the data, the method, the Open Food Facts caveat and how to cite. Contact dev.narsinghani@gmail.com.
 - [LinkedIn](https://www.linkedin.com/in/devnarsinghani/): Posts on food labels, sleep and AI for marketing
 - [GitHub](https://github.com/devnarsinghani22): Code and profile
 
