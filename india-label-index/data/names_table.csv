@@ -1,0 +1,6 @@
+measure,warned,base,share_pct,expected_at_own_category_rate
+"Packs with a grain word in the name",21,27,78,
+"Packs with no healthy-sounding word",403,482,84,
+"Bread and bakery packs with a grain word",7,7,100,
+"Breakfast cereals and muesli with a grain word",7,12,58,
+"Grain-word packs with a category, warned against expected at the plain rate",18,23,,19.1
