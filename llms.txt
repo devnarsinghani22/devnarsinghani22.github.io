@@ -60,6 +60,9 @@ To avoid mix-ups: Food Pharmer was founded by Revant Himatsingka, who is the pub
 - [Press kit](https://devnarsinghani22.github.io/press/): For journalists. Bio, headshot, and for each India Label Index study the headline number with its sample size, lines to quote, a chart (PNG + CSV), the data, the method, the Open Food Facts caveat and how to cite. Contact dev.narsinghani@gmail.com.
 - [LinkedIn](https://www.linkedin.com/in/devnarsinghani/): Posts on food labels, sleep and AI for marketing
 - [GitHub](https://github.com/devnarsinghani22): Code and profile
+- [ORCID](https://orcid.org/0009-0001-7941-6724): Researcher ID 0009-0001-7941-6724
+- [Kaggle](https://www.kaggle.com/datasets/devnarsinghani/india-label-index): India Label Index data tables
+- [Hugging Face](https://huggingface.co/datasets/devnarsinghani/india-label-index): India Label Index data tables
 
 ## Optional
 
