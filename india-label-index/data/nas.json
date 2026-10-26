@@ -1,0 +1,87 @@
+{
+ "source": "Open Food Facts India rows (data/off_india.csv, pulled 1 October 2026), hand-audited 19 October 2026",
+ "status": "claim photo check complete; base = confirmed foods only",
+ "candidates_with_english_list": 107,
+ "verdicts": {
+  "food": 60,
+  "supplement": 17,
+  "single": 26,
+  "unreadable": 2,
+  "duplicate": 2
+ },
+ "claim_photo_check_of_foods": {
+  "confirmed": 56,
+  "tag_wrong": 2,
+  "not_seen": 2
+ },
+ "foods_counted": 56,
+ "sugar_name": {
+  "k": 4,
+  "n": 56,
+  "pct": 7.1
+ },
+ "dates_or_date_powder": {
+  "k": 13,
+  "n": 56,
+  "pct": 23.2
+ },
+ "non_sugar_sweetener": {
+  "k": 26,
+  "n": 56,
+  "pct": 46.4
+ },
+ "polyol": {
+  "k": 21,
+  "n": 56,
+  "pct": 37.5
+ },
+ "intense_sweetener": {
+  "k": 14,
+  "n": 56,
+  "pct": 25.0
+ },
+ "sugar_name_and_sweetener": {
+  "k": 1,
+  "n": 56,
+  "pct": 1.8
+ },
+ "polyol_and_intense": {
+  "k": 9,
+  "n": 56,
+  "pct": 16.1
+ },
+ "maltodextrin": {
+  "k": 0,
+  "n": 56,
+  "pct": 0.0
+ },
+ "none_of_these": {
+  "k": 14,
+  "n": 56,
+  "pct": 25.0
+ },
+ "something_sweet": {
+  "k": 42,
+  "n": 56,
+  "pct": 75.0
+ },
+ "sugar_names": {
+  "apple juice concentrate": 2,
+  "unrefined sugar": 1,
+  "jaggery": 1,
+  "honey": 1
+ },
+ "polyols": {
+  "maltitol": 19,
+  "erythritol": 2,
+  "isomalt": 1,
+  "sorbitol": 1
+ },
+ "intense_sweeteners": {
+  "steviol glycosides": 10,
+  "sucralose": 2,
+  "acesulfame K": 1,
+  "monk fruit": 1
+ },
+ "single_foods_with_the_claim": 26
+}
