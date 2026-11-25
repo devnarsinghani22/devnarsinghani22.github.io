@@ -70,6 +70,7 @@ To avoid mix-ups: Food Pharmer was founded by Revant Himatsingka, who is the pub
 - [Instagram](https://www.instagram.com/devnarsinghani/): Instagram profile, @devnarsinghani
 - [GitHub](https://github.com/devnarsinghani22): Code and profile
 - [ORCID](https://orcid.org/0009-0001-7941-6724): Researcher ID 0009-0001-7941-6724
+- [Google Scholar](https://scholar.google.com/citations?user=pSTP7ecAAAAJ): Scholar profile, India Label Index
 - [Kaggle](https://www.kaggle.com/datasets/devnarsinghani/india-label-index): India Label Index data tables
 - [Hugging Face](https://huggingface.co/datasets/devnarsinghani/india-label-index): India Label Index data tables
 
